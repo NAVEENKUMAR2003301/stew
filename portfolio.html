@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Decor Portfolio | Book Instantly</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Minimal Base */
+        :root {
+            --black: #000;
+            --aqua: #00f5d4;
+            --white: #fff;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            width: 100%;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--aqua);
+        }
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--aqua);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+            z-index: -1;
+        }
+        .hero-content {
+            max-width: 800px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards 0.5s;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards 0.8s;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--aqua);
+            color: var(--black);
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards 1.1s;
+        }
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 245, 212, 0.3);
+        }
+        
+        /* Owner Section */
+        .owner {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: var(--black);
+        }
+        .owner-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        .owner-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 5px solid var(--aqua);
+            overflow: hidden;
+            position: relative;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: scaleIn 1s forwards 0.5s;
+        }
+        .owner-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .owner-img:hover img {
+            transform: scale(1.1);
+        }
+        .owner-info {
+            max-width: 500px;
+            text-align: left;
+            opacity: 0;
+            transform: translateX(50px);
+            animation: fadeInRight 1s forwards 0.8s;
+        }
+        .owner-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--aqua);
+        }
+        .owner-info p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        /* Portfolio Grid */
+        .portfolio {
+            padding: 5rem 2rem;
+            background: var(--black);
+        }
+        .portfolio h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--aqua);
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .portfolio-item {
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 245, 212, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        .portfolio-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Booking Form */
+        .booking {
+            padding: 5rem 2rem;
+            background: var(--black);
+            text-align: center;
+        }
+        .booking h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--aqua);
+        }
+        .booking-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 1rem;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s forwards 0.5s;
+        }
+        .booking-form input, 
+        .booking-form textarea, 
+        .booking-form select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--aqua);
+            background: transparent;
+            color: var(--white);
+            border-radius: 5px;
+        }
+        .booking-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        /* Map Section */
+        .map {
+            padding: 5rem 2rem;
+            background: var(--black);
+            text-align: center;
+        }
+        .map h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--aqua);
+        }
+        .map-container {
+            height: 400px;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            border: 5px solid var(--aqua);
+            border-radius: 10px;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s forwards 0.5s;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            background: var(--black);
+            border-top: 1px solid var(--aqua);
+        }
+        .social-links {
+            margin-bottom: 1rem;
+        }
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: var(--aqua);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes scaleIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Scroll Animations */
+        .animate-on-scroll {
+            animation: fadeInUp 1s forwards;
+        }
+
+        #ss{
+            position: absolute;
+            top: 20px;
+            left: 50px;
+            width: 150px;
+            height: 30px;
+            background-color: #000;
+            border: 2px solid aqua;
+            border-radius: 12px;
+            position: fixed;
+            z-index: 10;
+        }
+
+        #ss > a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        #ss:hover{
+            box-shadow: 2px 2px 20px 2px aqua;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+  
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <button id="ss"><a href="./index.html">Back to home</a></button>
+        <div class="hero-content">
+            <h1>Create Your Dream Wedding</h1>
+            <p>From intimate ceremonies to grand receptions, we craft unforgettable moments with precision and passion.</p>
+            <a href="#booking" class="btn">Book Instantly</a>
+        </div>
+    </section>
+    
+    <!-- Owner Section -->
+    <section class="owner" id="owner">
+        <div class="owner-container">
+            <div class="owner-img">
+                <img src="./assets/profile.jpg" alt="Owner Photo">
+            </div>
+            <div class="owner-info">
+                <h2>Hi, I'm stephen</h2>
+                <p>With over 10 years of experience in wedding decor, I pour my heart into every event. Your wedding isn't just another date—it's a story waiting to be told through design.</p>
+                <p>I specialize in transforming venues into emotional landscapes that reflect your unique love story.</p>
+                <a href="#booking" class="btn">Let's Talk</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio -->
+    <section class="portfolio" id="portfolio">
+        <h2>Our Recent Work</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="./assets/New folder/2.jpg" alt="Wedding Decor">
+                <div class="portfolio-overlay">
+                    <h3>Elegant Ballroom</h3>
+                    <p>Classic black-tie affair</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="./assets/New folder/3.jpg" alt="Wedding Decor">
+                <div class="portfolio-overlay">
+                    <h3>Rustic Charm</h3>
+                    <p>Barn wedding with vintage touches</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="./assets/New folder/4.jpg" alt="Wedding Decor">
+                <div class="portfolio-overlay">
+                    <h3>Beach Bliss</h3>
+                    <p>Sunset seaside celebration</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="./assets/New folder/5.jpg" alt="Wedding Decor">
+                <div class="portfolio-overlay">
+                    <h3>Modern Minimalism</h3>
+                    <p>Clean lines, bold statements</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="./assets/New folder/6.jpg" alt="Wedding Decor">
+                <div class="portfolio-overlay">
+                    <h3>Garden Romance</h3>
+                    <p>Floral fantasy</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="./assets/New folder/13.jpg" alt="Wedding Decor">
+                <div class="portfolio-overlay">
+                    <h3>Winter Wonderland</h3>
+                    <p>Frosted elegance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Booking Form -->
+    <section class="booking" id="booking">
+        <h2>Book Your Consultation</h2>
+        <form class="booking-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Phone" required>
+            <input type="date" placeholder="Wedding Date" required>
+            <select required>
+                <option value="" disabled selected>Select Package</option>
+                <option value="basic">Basic Decor</option>
+                <option value="premium">Premium Decor</option>
+                <option value="luxury">Luxury Full Service</option>
+            </select>
+            <textarea placeholder="Tell us about your vision..." required></textarea>
+            <button type="submit" class="btn">Secure My Date</button>
+        </form>
+    </section>
+    
+    <!-- Map -->
+    <section class="map" id="map">
+        <h2>Our Studio</h2>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.231911084884!2d78.1347224147936!3d9.91087689290039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c58ef9e6a5a9%3A0x8a1f94c5e5a4b5f5!2sVilathikulam%2C%20Tamil%20Nadu%20628601!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <p>&copy; 2023 StephenEvents All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Scroll Animations
+        const animateElements = () => {
+            const elements = document.querySelectorAll('.portfolio-item, .booking-form, .map-container');
+            elements.forEach((el, index) => {
+                const rect = el.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight - 100;
+                if (isVisible) {
+                    setTimeout(() => {
+                        el.classList.add('animate-on-scroll');
+                    }, index * 200);
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateElements);
+        window.addEventListener('load', animateElements);
+        
+        // Real-Time Form Validation
+        const form = document.querySelector('.booking-form');
+        form.addEventListener('input', (e) => {
+            if (e.target.value) {
+                e.target.style.borderColor = 'var(--aqua)';
+            } else {
+                e.target.style.borderColor = '#ccc';
+            }
+        });
+        
+        // Form Submission
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you! We will contact you within 24 hours to confirm your booking.');
+            form.reset();
+        });
+        
+        // Owner Photo Animation on Hover
+        const ownerImg = document.querySelector('.owner-img');
+        ownerImg.addEventListener('mouseenter', () => {
+            ownerImg.style.transform = 'scale(1.05)';
+            ownerImg.style.boxShadow = '0 0 30px rgba(0, 245, 212, 0.5)';
+        });
+        ownerImg.addEventListener('mouseleave', () => {
+            ownerImg.style.transform = 'scale(1)';
+            ownerImg.style.boxShadow = 'none';
+        });
+    </script>
+    <script src="./"></script>
+</body>
+</html>

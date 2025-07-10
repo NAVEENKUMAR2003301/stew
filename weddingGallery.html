@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Moments Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif;
+        }
+
+        body {
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: #fff;
+            border-radius: 3px;
+        }
+
+        /* Gallery Styles */
+        .gallery-container {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            animation: slideUp 1s ease-in-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .thumbnail-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .featured-image-container {
+            position: relative;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .featured-image {
+            width: 100%;
+            max-height: 600px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.5s ease;
+        }
+
+        .image-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .featured-image-container:hover .image-caption {
+            opacity: 1;
+        }
+
+        /* Testimonial Form Styles */
+        .testimonial-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            animation: slideUp 1s ease-in-out 0.3s both;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #ff6b6b;
+            border-radius: 3px;
+        }
+
+        .testimonial-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #ff6b6b;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(to right, #ff6b6b, #ff8e8e);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+            align-self: center;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Testimonial Carousel Styles */
+        .testimonial-carousel {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            animation: slideUp 1s ease-in-out 0.6s both;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial {
+            min-width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #ff6b6b;
+            font-size: 1.1rem;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 107, 107, 0.7);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background: #ff6b6b;
+        }
+
+        #prevBtn {
+            left: 10px;
+        }
+
+        #nextBtn {
+            right: 10px;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .indicator.active {
+            background: #ff6b6b;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 1rem;
+            animation: fadeIn 1s ease-in-out 0.9s both;
+        }
+
+        .social-icons {
+            margin-bottom: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Floating Hearts Animation */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 107, 107, 0.6);
+            animation: float 10s linear infinite;
+            font-size: 20px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        
+        #ss{
+            position: absolute;
+            top: 20px;
+            left: 50px;
+            width: 150px;
+            height: 30px;
+            background-color: #e78fea;
+            border: 2px solid rgb(240, 208, 215);
+            border-radius: 12px;
+            position: fixed;
+            z-index: 10;
+        }
+
+        #ss > a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        #ss:hover{
+            box-shadow: 2px 2px 20px 2px rgb(230, 46, 211);
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="floating-hearts" id="hearts-container"></div>
+
+    <div class="container">
+        <button id="ss"><a href="./index.html">Back to home</a></button>
+
+        <header>
+            <h1>Gallery</h1>
+            <p class="subtitle">Capturing your precious wedding moments</p>
+        </header>
+
+        <div class="gallery-container">
+            <div class="thumbnail-grid">
+                <img src="./assets/New folder/1.jpg" alt="Wedding Photo 1" class="thumbnail" data-large="https://source.unsplash.com/random/1200x800/?wedding,1" data-caption="Bride & Groom First Look">
+                <img src="./assets/New folder/2.jpg" alt="Wedding Photo 2" class="thumbnail" data-large="https://source.unsplash.com/random/1200x800/?wedding,2" data-caption="Ceremony Moment">
+                <img src="./assets/New folder/3.jpg" alt="Wedding Photo 3" class="thumbnail" data-large="https://source.unsplash.com/random/1200x800/?wedding,3" data-caption="Vows Exchange">
+                <img src="./assets/New folder/4.jpg" alt="Wedding Photo 4" class="thumbnail" data-large="https://source.unsplash.com/random/1200x800/?wedding,4" data-caption="Ring Ceremony">
+                <img src="./assets/New folder/5.jpg" alt="Wedding Photo 5" class="thumbnail" data-large="https://source.unsplash.com/random/1200x800/?wedding,5" data-caption="Bridal Portraits">
+                <img src="./assets/New folder/6.jpg" alt="Wedding Photo 6" class="thumbnail" data-large="https://source.unsplash.com/random/1200x800/?wedding,6" data-caption="Groom Portraits">
+                <img src="./assets/New folder/7.jpg" alt="Wedding Photo 7" class="thumbnail" data-large="https://source.unsplash.com/random/1200x800/?wedding,7" data-caption="Family Photos">
+                <img src="./assets/New folder/11.jpg" alt="Wedding Photo 8" class="thumbnail" data-large="https://source.unsplash.com/random/1200x800/?wedding,8" data-caption="Reception Celebration">
+            </div>
+
+           
+        </div>
+
+        <div class="testimonial-section">
+            <h2>Share Your Experience</h2>
+            <form class="testimonial-form" id="testimonial-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Testimonial</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Testimonial</button>
+            </form>
+        </div>
+
+        <div class="testimonial-carousel">
+            <h2>What Couples Say</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                
+                <div class="carousel-slide" id="carousel-slide">
+                    <div class="testimonial">
+                        <p class="testimonial-text">"The photography captured our special day perfectly. Every time we look at the photos, we're transported back to those magical moments."</p>
+                        <p class="testimonial-author">- Sarah & Michael</p>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Absolutely stunning work! The photographer made us feel so comfortable and the results were beyond our expectations."</p>
+                        <p class="testimonial-author">- Jessica & David</p>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-text">"We couldn't be happier with how our wedding photos turned out. The team was professional and creative throughout the entire process."</p>
+                        <p class="testimonial-author">- Emily & James</p>
+                    </div>
+                </div>
+                
+                <div class="carousel-indicators" id="indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; @Stephen events. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Gallery Image Selection
+        document.addEventListener('DOMContentLoaded', function() {
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const featuredImage = document.getElementById('featured-image');
+            const imageCaption = document.getElementById('image-caption');
+            
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    featuredImage.src = this.dataset.large;
+                    featuredImage.alt = this.alt;
+                    imageCaption.textContent = this.dataset.caption;
+                    
+                    // Add fade effect
+                    featuredImage.style.opacity = 0;
+                    setTimeout(() => {
+                        featuredImage.style.opacity = 1;
+                    }, 300);
+                });
+                
+                // Optional: Add hover effect preview
+                thumbnail.addEventListener('mouseenter', function() {
+                    if (window.innerWidth > 768) { // Only on desktop
+                        featuredImage.src = this.dataset.large;
+                        featuredImage.alt = this.alt;
+                        imageCaption.textContent = this.dataset.caption;
+                    }
+                });
+            });
+            
+            // Testimonial Carousel
+            const carouselSlide = document.querySelector('.carousel-slide');
+            const carouselTestimonials = document.querySelectorAll('.testimonial');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            let counter = 0;
+            const size = carouselTestimonials[0].clientWidth;
+            
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+            
+            // Button listeners
+            nextBtn.addEventListener('click', () => {
+                if (counter >= carouselTestimonials.length - 1) return;
+                carouselSlide.style.transition = "transform 0.5s ease-in-out";
+                counter++;
+                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+                updateIndicators();
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                if (counter <= 0) return;
+                carouselSlide.style.transition = "transform 0.5s ease-in-out";
+                counter--;
+                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+                updateIndicators();
+            });
+            
+            carouselSlide.addEventListener('transitionend', () => {
+                if (carouselTestimonials[counter].id === 'lastClone') {
+                    carouselSlide.style.transition = "none";
+                    counter = carouselTestimonials.length - 2;
+                    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+                }
+                if (carouselTestimonials[counter].id === 'firstClone') {
+                    carouselSlide.style.transition = "none";
+                    counter = carouselTestimonials.length - counter;
+                    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+                }
+            });
+            
+            // Indicator listeners
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    carouselSlide.style.transition = "transform 0.5s ease-in-out";
+                    counter = index;
+                    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+                    updateIndicators();
+                });
+            });
+            
+            function updateIndicators() {
+                indicators.forEach((indicator, index) => {
+                    if (index === counter) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Auto-rotate carousel
+            setInterval(() => {
+                if (counter >= carouselTestimonials.length - 1) counter = -1;
+                carouselSlide.style.transition = "transform 0.5s ease-in-out";
+                counter++;
+                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+                updateIndicators();
+            }, 5000);
+            
+            // Testimonial form submission
+            const testimonialForm = document.getElementById('testimonial-form');
+            testimonialForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // In a real application, you would send this data to a server
+                alert('Thank you for your testimonial! We appreciate your feedback.');
+                testimonialForm.reset();
+            });
+            
+            // Create floating hearts
+            createHearts();
+        });
+        
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts-container');
+            const heartCount = 15;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤';
+                heart.classList.add('heart');
+                
+                // Random position and animation duration
+                const leftPos = Math.random() * 100;
+                const animationDuration = 5 + Math.random() * 10;
+                const delay = Math.random() * 10;
+                const size = 10 + Math.random() * 20;
+                
+                heart.style.left = `${leftPos}%`;
+                heart.style.animationDuration = `${animationDuration}s`;
+                heart.style.animationDelay = `${delay}s`;
+                heart.style.fontSize = `${size}px`;
+                
+                heartsContainer.appendChild(heart);
+            }
+        }
+    </script>
+</body>
+</html>

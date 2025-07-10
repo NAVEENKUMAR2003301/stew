@@ -1,596 +1,4 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stephen wedding Events</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        .extra-content {
-    display: none;
-    transition: all 0.3s ease-out;
-}
 
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-.service-card {
-    transition: height 0.3s ease;
-    overflow: hidden;
-}
-       
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .dropdown-content {
-            display: none;
-        }
-        
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .hero-content > * {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-        
-        .hero-content h2 {
-            animation-delay: 0.2s;
-        }
-        
-        .hero-content h1 {
-            animation-delay: 0.4s;
-        }
-        
-        .hero-content p {
-            animation-delay: 0.6s;
-        }
-        
-        .hero-content .cta-button {
-            animation-delay: 0.8s;
-        }
-        
-       
-        .testimonial-carousel {
-            scroll-snap-type: x mandatory;
-        }
-        
-        .testimonial-slide {
-            scroll-snap-align: start;
-        }
-        
-       
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-      
-        .gradient-text {
-            background: linear-gradient(45deg, #f72585, #7209b7, #3a0ca3, #4361ee);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-    </style>
-</head>
-<body class="overflow-x-hidden bg-gray-50">
-    
-<header class="fixed top-0 left-0 w-full z-50 transition-all duration-500" id="mainHeader">
-   
-    <div class="bg-gradient-to-r from-pink-500 to-purple-600 text-white text-center py-2 px-4 text-sm font-medium">
-        <div class="flex items-center justify-center">
-            <span class="animate-pulse mr-2">✨</span>
-            <marquee class="marquee-text">BOOK YOUR 2024 WEDDING NOW & GET 10% OFF • LIMITED DATES AVAILABLE • FREE CONSULTATION • </marquee>
-            <span class="animate-pulse ml-2">✨</span>
-        </div>
-    </div>
-    
-
-    <nav class="bg-white bg-opacity-90 backdrop-blur-md shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#home" class="logo-container transform hover:scale-105 transition duration-300">
-                        <img src="./assets/stew-logo.png" alt="Stew" class="h-12 w-auto">
-                    </a>
-                </div>
-
-            
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link relative group text-gray-700 hover:text-pink-600 px-1 py-2 text-sm font-medium transition-colors duration-300">
-                        Home
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-500 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                    
-                    <div class="dropdown relative group">
-                        <button class="nav-link flex items-center text-gray-700 hover:text-pink-600 px-1 py-2 text-sm font-medium transition-colors duration-300">
-                            Services
-                            <svg class="ml-1 h-4 w-4 transform group-hover:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                            </svg>
-                        </button>
-                        <div class="dropdown-menu absolute left-0 mt-2 w-56 origin-top-left bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
-                            <div class="py-1">
-                                <a href="#" class="dropdown-item group flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600">
-                                    <span class="w-2 h-2 bg-pink-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                                    Wedding Decor
-                                </a>
-                                <a href="#" class="dropdown-item group flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600">
-                                    <span class="w-2 h-2 bg-pink-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                                    Floral Arrangements
-                                </a>
-                            </div>
-                            <div class="py-1">
-                                <a href="#" class="dropdown-item group flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600">
-                                    <span class="w-2 h-2 bg-pink-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                                    Venue Styling
-                                </a>
-                                <a href="#" class="dropdown-item group flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600">
-                                    <span class="w-2 h-2 bg-pink-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                                    Lighting Design
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="#portfolio" class="nav-link relative group text-gray-700 hover:text-pink-600 px-1 py-2 text-sm font-medium transition-colors duration-300">
-                        Portfolio
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-500 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                    
-                    <a href="#contact" class="ml-4 px-6 py-2 border border-transparent text-sm font-medium rounded-full text-white bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                        Book Consultation
-                    </a>
-                </div>
-
-                <div class="md:hidden flex items-center">
-                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-pink-600 focus:outline-none transition duration-150 ease-in-out" aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-       
-        <div class="mobile-menu hidden md:hidden origin-top absolute top-20 inset-x-0 bg-white shadow-lg ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 transform transition-all duration-300" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-colors duration-300">Home</a>
-                
-                <div x-data="{ open: false }" class="relative">
-                    <button @click="open = !open" class="w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-colors duration-300">
-                        Services
-                        <svg :class="{'transform rotate-180': open}" class="ml-1 h-5 w-5 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="pl-4">
-                        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-pink-600 hover:bg-pink-50 transition-colors duration-300">Wedding Decor</a>
-                        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-pink-600 hover:bg-pink-50 transition-colors duration-300">Floral Arrangements</a>
-                        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-pink-600 hover:bg-pink-50 transition-colors duration-300">Venue Styling</a>
-                    </div>
-                </div>
-                
-                <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-colors duration-300">Portfolio</a>
-                
-                <a href="#contact" class="block w-full mt-2 px-3 py-2 rounded-md text-base font-medium text-center text-white bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 transition-all duration-300">
-                    Contact Us
-                </a>
-            </div>
-        </div>
-    </nav>
-</header>
-   
-    <section id="home" class="hero-banner h-screen bg-[url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center flex items-center px-[5%] relative">
-        <div class="hero-content max-w-[600px] text-white z-10">
-            <h2 class="text-base font-normal mb-2.5">April 9, Near Indigo</h2>
-            <h1 class="text-4xl md:text-5xl font-bold mb-5 leading-snug">Create Timeless Memories With Our Wedding Magic</h1>
-            <p class="text-base mb-8 leading-relaxed">We transform ordinary spaces into extraordinary wedding venues. Our team of designers will bring your dream wedding to life with exquisite floral arrangements and breathtaking decor.</p>
-            <a href="#contact" class="cta-button inline-block py-3 px-8 bg-gradient-to-r from-pink-500 to-purple-600 text-white no-underline rounded-full font-medium hover:from-pink-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl">Book a Consultation</a>
-        </div>
-        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-        
-        
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <i class="fas fa-chevron-down text-white text-2xl"></i>
-        </div>
-    </section>
-
-  
-    <section id="about" class="py-20 px-[5%] bg-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 gradient-text">Our Story</h2>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Founded in 2010, HANNA ECODER has been crafting unforgettable wedding experiences for over a decade. What began as a small floral shop has blossomed into a premier wedding decoration company serving clients worldwide.
-                    </p>
-                    <p class="text-gray-600 mb-8 leading-relaxed">
-                        Our team of 25 passionate designers, florists, and event planners work tirelessly to bring your vision to life. We believe every love story deserves a beautiful setting, and we're honored to be part of your special day.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <div class="bg-pink-50 px-4 py-2 rounded-full flex items-center">
-                            <i class="fas fa-award text-pink-500 mr-2"></i>
-                            <span class="text-sm font-medium">50+ Awards</span>
-                        </div>
-                        <div class="bg-pink-50 px-4 py-2 rounded-full flex items-center">
-                            <i class="fas fa-heart text-pink-500 mr-2"></i>
-                            <span class="text-sm font-medium">500+ Weddings</span>
-                        </div>
-                        <div class="bg-pink-50 px-4 py-2 rounded-full flex items-center">
-                            <i class="fas fa-globe text-pink-500 mr-2"></i>
-                            <span class="text-sm font-medium">Global Service</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative" data-aos="fade-left">
-                    <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Our Team" class="w-full h-auto rounded-lg shadow-xl">
-                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg hidden lg:block">
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-quote-left text-pink-500"></i>
-                            </div>
-                            <p class="text-sm font-medium">"We pour our hearts into every design to make your wedding uniquely yours."</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-   
-    <section id="services" class="py-20 px-[5%] bg-gray-50">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Premium Services</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive wedding decoration services tailored to your unique vision and style.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-               
-                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mb-6 text-pink-500 text-2xl">
-                        <i class="fas fa-ring"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Complete Wedding Decor</h3>
-                    <p class="text-gray-600 mb-4">From ceremony to reception, we design cohesive decor that tells your love story.</p>
-                    <ul class="text-gray-600 space-y-2 mb-6">
-                        <li class="flex items-center"><i class="fas fa-check text-pink-500 mr-2"></i> Ceremony backdrops</li>
-                        <li class="flex items-center"><i class="fas fa-check text-pink-500 mr-2"></i> Aisle decorations</li>
-                        <li class="flex items-center"><i class="fas fa-check text-pink-500 mr-2"></i> Table centerpieces</li>
-                        <li class="flex items-center"><i class="fas fa-check text-pink-500 mr-2"></i> Lighting design</li>
-                    </ul>
-                    <a href="#" class="text-pink-500 font-medium inline-flex items-center">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                
-                
-                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 text-purple-500 text-2xl">
-                        <i class="fas fa-glass-cheers"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Floral Design</h3>
-                    <p class="text-gray-600 mb-4">Exquisite floral arrangements that create a romantic atmosphere for your special day.</p>
-                    <ul class="text-gray-600 space-y-2 mb-6">
-                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Bridal bouquets</li>
-                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Boutonnieres</li>
-                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Ceremony arches</li>
-                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Floral installations</li>
-                    </ul>
-                    <a href="#" class="text-purple-500 font-medium inline-flex items-center">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                
-             
-                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 text-blue-500 text-2xl">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Venue Styling</h3>
-                    <p class="text-gray-600 mb-4">Transform any space into a wedding wonderland with our complete venue styling.</p>
-                    <ul class="text-gray-600 space-y-2 mb-6">
-                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Furniture rentals</li>
-                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Linen selection</li>
-                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Table settings</li>
-                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Themed decor</li>
-                    </ul>
-                    <a href="#" class="text-blue-500 font-medium inline-flex items-center">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-  
-    <section id="portfolio" class="py-20 px-[5%] bg-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Wedding Collections</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Explore our curated wedding decoration styles to inspire your special day.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              
-                <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="fade-up">
-                    <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Romantic Garden Wedding" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h3 class="text-white text-xl font-bold mb-2">Romantic Garden</h3>
-                        <p class="text-gray-200">Soft pastels and lush greenery create a fairytale atmosphere</p>
-                    </div>
-                </div>
-                
-               
-                <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern Minimalist Wedding" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h3 class="text-white text-xl font-bold mb-2">Modern Minimalist</h3>
-                        <p class="text-gray-200">Clean lines and sophisticated simplicity</p>
-                    </div>
-                </div>
-                
-              
-                <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Rustic Charm Wedding" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h3 class="text-white text-xl font-bold mb-2">Rustic Charm</h3>
-                        <p class="text-gray-200">Natural textures and warm, earthy tones</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center">
-                <a href="#" class="inline-block py-3 px-8 bg-gradient-to-r from-pink-500 to-purple-600 text-white no-underline rounded-full font-medium hover:from-pink-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl">View All Collections</a>
-            </div>
-        </div>
-    </section>
-
-    
-    <section class="py-20 px-[5%] bg-gradient-to-r from-pink-50 to-purple-50">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">What Couples Say</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Hear from the happy couples we've had the privilege to work with.</p>
-            </div>
-            
-            <div class="relative">
-                <div class="testimonial-carousel flex overflow-x-auto snap-x snap-mandatory pb-8 scrollbar-hide" id="testimonialCarousel">
-                    
-                    <div class="testimonial-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4" data-aos="fade-up">
-                        <div class="bg-white p-8 rounded-lg shadow-md h-full">
-                            <div class="flex items-center mb-6">
-                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah J." class="w-12 h-12 rounded-full mr-4">
-                                <div>
-                                    <h4 class="font-bold">SARA</h4>
-                                    <p class="text-gray-500 text-sm">May 2023 Wedding</p>
-                                </div>
-                            </div>
-                            <p class="text-gray-600 mb-6">"venue into something out of a fairytale. Every detail was perfect, from the floral arches to the table settings. Our guests couldn't stop talking about how beautiful everything was!"</p>
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="testimonial-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="bg-white p-8 rounded-lg shadow-md h-full">
-                            <div class="flex items-center mb-6">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David L." class="w-12 h-12 rounded-full mr-4">
-                                <div>
-                                    <h4 class="font-bold">RAM</h4>
-                                    <p class="text-gray-500 text-sm">September 2022 Wedding</p>
-                                </div>
-                            </div>
-                            <p class="text-gray-600 mb-6">"beautiful than we could have imagined. The team was professional, creative, and made the whole process stress-free."</p>
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    
-                   
-                    <div class="testimonial-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="bg-white p-8 rounded-lg shadow-md h-full">
-                            <div class="flex items-center mb-6">
-                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jessica T." class="w-12 h-12 rounded-full mr-4">
-                                <div>
-                                    <h4 class="font-bold">Ryan</h4>
-                                    <p class="text-gray-500 text-sm">June 2023 Wedding</p>
-                                </div>
-                            </div>
-                            <p class="text-gray-600 mb-6">"The floral vision perfectly and added so many creative touches we wouldn't have thought of. Our wedding photos look like they're from a magazine!"</p>
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-               
-                <button class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white p-2 rounded-full shadow-md z-10 hover:bg-gray-100 transition" id="prevTestimonial">
-                    <i class="fas fa-chevron-left text-gray-700"></i>
-                </button>
-                <button class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white p-2 rounded-full shadow-md z-10 hover:bg-gray-100 transition" id="nextTestimonial">
-                    <i class="fas fa-chevron-right text-gray-700"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-  
-    <section id="contact" class="py-20 px-[5%] bg-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Let's Create Your Dream Wedding</h2>
-                    <p class="text-gray-600 mb-8 leading-relaxed">
-                        Ready to start planning your perfect day? Fill out the form and we'll get back to you within 24 hours to schedule your consultation. We can't wait to hear about your vision!
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="bg-pink-100 p-3 rounded-full mr-4">
-                                <i class="fas fa-phone-alt text-pink-500"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold mb-1">Call Us</h4>
-                                <p class="text-gray-600">9788747902</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-purple-100 p-3 rounded-full mr-4">
-                                <i class="fas fa-envelope text-purple-500"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold mb-1">Email Us</h4>
-                                <p class="text-gray-600">StephenEvents@gmail.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                <i class="fas fa-map-marker-alt text-blue-500"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold mb-1">Visit Us</h4>
-                                <p class="text-gray-600">vilathikulam<br>Tutcorin</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div data-aos="fade-left">
-                    <form class="bg-gray-50 p-8 rounded-lg shadow-md">
-                        <div class="mb-6">
-                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent" placeholder="John & Jane Doe">
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent" placeholder="your@email.com">
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
-                            <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent" placeholder="(555) 123-4567">
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="wedding-date" class="block text-gray-700 font-medium mb-2">Wedding Date</label>
-                            <input type="date" id="wedding-date" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent">
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="message" class="block text-gray-700 font-medium mb-2">Your Vision</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent" placeholder="Tell us about your dream wedding..."></textarea>
-                        </div>
-                        
-                        <button type="submit" id="submitt" onclick="msg()" class="w-full py-3 px-8 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-medium rounded-full hover:from-pink-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"><a href="">Send Message</a></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-   
-    <footer class="bg-gray-900 text-white py-12 px-[5%]">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <img src="./assets/stew-logo.png" alt="HANNA ECODER" class="w-[120px] mb-4">
-                    <p class="text-gray-400">Creating unforgettable wedding experiences since 2010.</p>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
-                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition">Portfolio</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-bold mb-4">Services</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Wedding Decor</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Floral Design</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Venue Styling</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Lighting Design</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Event Planning</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-bold mb-4">Connect With Us</h4>
-                    <div class="flex space-x-4 mb-4">
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-500 transition"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-500 transition"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-500 transition"><i class="fab fa-pinterest-p"></i></a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-500 transition"><i class="fab fa-twitter"></i></a>
-                    </div>
-                    <p class="text-gray-400">Subscribe to our newsletter for wedding inspiration and special offers.</p>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">© 2023 stew. All rights reserved.</p>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">Sitemap</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-   
-    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-pink-500 text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-pink-600">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./script.js"></script>
-</body>
-</html> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -604,111 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        .extra-content {
-            display: none;
-            transition: all 0.3s ease-out;
-        }
-
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        
-        .service-card {
-            transition: height 0.3s ease;
-            overflow: hidden;
-        }
-        
-        /* Custom styles */
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .dropdown-content {
-            display: none;
-        }
-        
-        /* Hero text animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .hero-content > * {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-        
-        .hero-content h2 {
-            animation-delay: 0.2s;
-        }
-        
-        .hero-content h1 {
-            animation-delay: 0.4s;
-        }
-        
-        .hero-content p {
-            animation-delay: 0.6s;
-        }
-        
-        .hero-content .cta-button {
-            animation-delay: 0.8s;
-        }
-        
-        /* Testimonial carousel */
-        .testimonial-carousel {
-            scroll-snap-type: x mandatory;
-        }
-        
-        .testimonial-slide {
-            scroll-snap-align: start;
-        }
-        
-        /* Floating animation */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        /* Gradient text */
-        .gradient-text {
-            background: linear-gradient(45deg, #f72585, #7209b7, #3a0ca3, #4361ee);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        /* Testimonial cards */
-        .testimonial-card {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
-        
-        .testimonial-img {
-            width: 70px;
-            height: 70px;
-            object-fit: cover;
-            border: 3px solid white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body class="overflow-x-hidden bg-gray-50">
     <!-- Attractive Animated Header -->
@@ -739,39 +43,14 @@
                             Home
                             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-500 group-hover:w-full transition-all duration-300"></span>
                         </a>
+                        <a href="./service.html" class="nav-link relative group text-gray-700 hover:text-pink-600 px-1 py-2 text-sm font-medium transition-colors duration-300">
+                            Service
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-500 group-hover:w-full transition-all duration-300"></span>
+                        </a>
                         
-                        <div class="dropdown relative group">
-                            <button class="nav-link flex items-center text-gray-700 hover:text-pink-600 px-1 py-2 text-sm font-medium transition-colors duration-300">
-                                Services
-                                <svg class="ml-1 h-4 w-4 transform group-hover:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                                </svg>
-                            </button>
-                            <div class="dropdown-menu absolute left-0 mt-2 w-56 origin-top-left bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
-                                <div class="py-1">
-                                    <a href="wedding-decor.html" class="dropdown-item group flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600">
-                                        <span class="w-2 h-2 bg-pink-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                                        Wedding Decor
-                                    </a>
-                                    <a href="floral-arrangements.html" class="dropdown-item group flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600">
-                                        <span class="w-2 h-2 bg-pink-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                                        Floral Arrangements
-                                    </a>
-                                </div>
-                                <div class="py-1">
-                                    <a href="venue-styling.html" class="dropdown-item group flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600">
-                                        <span class="w-2 h-2 bg-pink-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                                        Venue Styling
-                                    </a>
-                                    <a href="lighting-design.html" class="dropdown-item group flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600">
-                                        <span class="w-2 h-2 bg-pink-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                                        Lighting Design
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                       
                         
-                        <a href="#portfolio" class="nav-link relative group text-gray-700 hover:text-pink-600 px-1 py-2 text-sm font-medium transition-colors duration-300">
+                        <a href="./portfolio.html" class="nav-link relative group text-gray-700 hover:text-pink-600 px-1 py-2 text-sm font-medium transition-colors duration-300">
                             Portfolio
                             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-500 group-hover:w-full transition-all duration-300"></span>
                         </a>
@@ -812,7 +91,7 @@
                         </div>
                     </div>
                     
-                    <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-colors duration-300">Portfolio</a>
+                    <a href="./portfolio.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-colors duration-300">Portfolio</a>
                     
                     <a href="#contact" class="block w-full mt-2 px-3 py-2 rounded-md text-base font-medium text-center text-white bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 transition-all duration-300">
                         Contact Us
@@ -902,7 +181,7 @@
                         <li class="flex items-center"><i class="fas fa-check text-pink-500 mr-2"></i> Table centerpieces</li>
                         <li class="flex items-center"><i class="fas fa-check text-pink-500 mr-2"></i> Lighting design</li>
                     </ul>
-                    <a href="wedding-decor.html" class="text-pink-500 font-medium inline-flex items-center">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
+                    <a href="./service.html" class="text-pink-500 font-medium inline-flex items-center">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
                 
                 <!-- Service 2 -->
@@ -918,7 +197,7 @@
                         <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Ceremony arches</li>
                         <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Floral installations</li>
                     </ul>
-                    <a href="floral-arrangements.html" class="text-purple-500 font-medium inline-flex items-center">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
+                    <a href="./service.html" class="text-purple-500 font-medium inline-flex items-center">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
                 
                 <!-- Service 3 -->
@@ -934,7 +213,7 @@
                         <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Table settings</li>
                         <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Themed decor</li>
                     </ul>
-                    <a href="venue-styling.html" class="text-blue-500 font-medium inline-flex items-center">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
+                    <a href="./service.html" class="text-blue-500 font-medium inline-flex items-center">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
             </div>
         </div>
@@ -951,29 +230,29 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                 <!-- Portfolio Item 1 -->
                 <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="fade-up">
-                    <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Romantic Garden Wedding" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                   <a href="./weddingGallery.html"> <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Romantic Garden Wedding" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <h3 class="text-white text-xl font-bold mb-2">Romantic Garden</h3>
                         <p class="text-gray-200">Soft pastels and lush greenery create a fairytale atmosphere</p>
-                    </div>
+                    </div></a>
                 </div>
                 
                 <!-- Portfolio Item 2 -->
                 <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern Minimalist Wedding" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <a href="./weddingGallery.html">   <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern Minimalist Wedding" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <h3 class="text-white text-xl font-bold mb-2">Modern Minimalist</h3>
                         <p class="text-gray-200">Clean lines and sophisticated simplicity</p>
-                    </div>
+                    </div></a>
                 </div>
                 
                 <!-- Portfolio Item 3 -->
                 <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Rustic Charm Wedding" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <a href="./weddingGallery.html">   <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Rustic Charm Wedding" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <h3 class="text-white text-xl font-bold mb-2">Rustic Charm</h3>
                         <p class="text-gray-200">Natural textures and warm, earthy tones</p>
-                    </div>
+                    </div></a>
                 </div>
             </div>
             
@@ -1311,116 +590,6 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Initialize AOS animation
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            offset: 100
-        });
-
-        // Mobile menu toggle
-        const mobileMenuButton = document.querySelector('.mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const mobileServicesToggle = document.querySelector('#mobile-services-toggle');
-        const mobileServicesDropdown = document.querySelector('#mobile-services-dropdown');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('scale-y-100');
-            mobileMenu.classList.toggle('opacity-100');
-        });
-
-        mobileServicesToggle.addEventListener('click', () => {
-            mobileServicesDropdown.classList.toggle('hidden');
-            mobileServicesToggle.querySelector('svg').classList.toggle('rotate-180');
-        });
-
-        // FAQ accordion
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.parentElement.querySelector('.faq-answer');
-                const icon = question.querySelector('i');
-                
-                // Toggle answer visibility
-                answer.classList.toggle('hidden');
-                
-                // Rotate icon
-                icon.classList.toggle('rotate-180');
-                
-                // Close other open answers
-                faqQuestions.forEach(otherQuestion => {
-                    if (otherQuestion !== question) {
-                        const otherAnswer = otherQuestion.parentElement.querySelector('.faq-answer');
-                        const otherIcon = otherQuestion.querySelector('i');
-                        
-                        otherAnswer.classList.add('hidden');
-                        otherIcon.classList.remove('rotate-180');
-                    }
-                });
-            });
-        });
-
-        // Back to top button
-        const backToTopButton = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0', 'invisible');
-                backToTopButton.classList.add('opacity-100', 'visible');
-            } else {
-                backToTopButton.classList.remove('opacity-100', 'visible');
-                backToTopButton.classList.add('opacity-0', 'invisible');
-            }
-        });
-
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Header scroll effect
-        const header = document.getElementById('mainHeader');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('shadow-lg');
-            } else {
-                header.classList.remove('shadow-lg');
-            }
-        });
-
-        // Form submission
-        const weddingForm = document.getElementById('weddingForm');
-        weddingForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Here you would typically send the form data to your server
-            alert('Thank you for your inquiry! We will contact you within 24 hours.');
-            weddingForm.reset();
-        });
-
-        // Service card expansion
-        const serviceCards = document.querySelectorAll('.service-card');
-        serviceCards.forEach(card => {
-            const readMoreBtn = card.querySelector('.read-more-btn');
-            const extraContent = card.querySelector('.extra-content');
-            
-            if (readMoreBtn && extraContent) {
-                readMoreBtn.addEventListener('click', () => {
-                    extraContent.classList.toggle('hidden');
-                    readMoreBtn.textContent = extraContent.classList.contains('hidden') ? 'Read More' : 'Read Less';
-                    
-                    // Adjust card height
-                    if (extraContent.classList.contains('hidden')) {
-                        card.style.height = 'auto';
-                    } else {
-                        card.style.height = card.scrollHeight + 'px';
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="./script.js"></script>
 </body>
 </html>
